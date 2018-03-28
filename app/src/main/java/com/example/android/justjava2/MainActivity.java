@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method updates the display.
      */
-    public void updateScreen() {
+    private void updateScreen() {
         displayQuantity(gQuantity);
         displayPrice(calculatePrice());
         displayMessage("---");
@@ -108,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
+
+//        The next two lines I only used them to test some code left here for reference
+//        View textView = findViewById(R.id.order_summary_text_view);
+//        textView.setVisibility(View.GONE);
+
     }
 
 }
