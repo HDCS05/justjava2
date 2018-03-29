@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void updateScreen() {
         displayQuantity(gQuantity);
-        displayPrice(calculatePrice());
+        displayPrice(gQuantity * gPrice);
         displayMessage("---");
     }
 
@@ -63,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        /* calculate the prize */
-        int price = calculatePrice();
-
         /* check if the whipped cream button is selected */
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
@@ -73,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         /* check if the chocolate button is selected */
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
+
+        /* calculate the prize */
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
 
         /* get the string from the name field */
         EditText nameField = (EditText) findViewById(R.id.name_field);
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         /* send the string to the method that handles the display */
         displayMessage(priceMessage);
+
     }
 
     /**
@@ -94,8 +95,16 @@ public class MainActivity extends AppCompatActivity {
      * globalPrice is the price per cup ordered
      * quantity is the number of cups of coffee ordered
      */
-    private int calculatePrice() {
-        return gQuantity * gPrice;
+    private int calculatePrice(boolean addWhippedCream,
+                               boolean addChocolate) {
+        int basePrice = gPrice;
+        if (addWhippedCream) {
+            basePrice += 1;
+        }
+        if (addChocolate) {
+            basePrice += 2;
+        }
+        return gQuantity * basePrice;
     }
 
     /**
