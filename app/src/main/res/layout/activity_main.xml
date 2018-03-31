@@ -119,24 +119,24 @@
             android:onClick="submitOrder"
             android:text="Order" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Order Summary"
-            android:textAllCaps="true" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="Order Summary"-->
+            <!--android:textAllCaps="true" />-->
 
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:text="---"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        <!--<TextView-->
+            <!--android:id="@+id/order_summary_text_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:text="-&#45;&#45;"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
 
     </LinearLayout>
 

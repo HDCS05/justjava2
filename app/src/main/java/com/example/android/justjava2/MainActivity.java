@@ -9,6 +9,8 @@
 package com.example.android.justjava2;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             gQuantity++;
         }
         else {
+            /* "getApplicationContext()" or "this"  will work */
             Toast.makeText(getApplicationContext(),
                     "You can't order more than 100 coffees!",
                     Toast.LENGTH_SHORT).show();
@@ -57,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
             gQuantity--;
         }
         else {
-            Toast.makeText(getApplicationContext(),
+            /* "getApplicationContext()" or "this"  will work */
+            Toast.makeText(this,
                     "You can't order less than 1 coffee!",
                     Toast.LENGTH_SHORT).show();
         }
@@ -70,13 +74,38 @@ public class MainActivity extends AppCompatActivity {
     private void updateScreen() {
         displayQuantity(gQuantity);
         displayPrice(gQuantity * gPrice);
-        displayMessage("---");
+//        displayMessage("---");
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+
+//        /* check if the whipped cream button is selected */
+//        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+//        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+//
+//        /* check if the chocolate button is selected */
+//        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+//        boolean hasChocolate = chocolateCheckBox.isChecked();
+//
+//        /* calculate the prize */
+//        int price = calculatePrice(hasWhippedCream, hasChocolate);
+//
+//        /* get the string from the name field */
+//        EditText nameField = (EditText) findViewById(R.id.name_field);
+//        String vOrderName = nameField.getText().toString();
+//
+//        /* create the string to display as message */
+//        String priceMessage = createOrderSumary(
+//                price,
+//                hasWhippedCream,
+//                hasChocolate,
+//                vOrderName);
+//
+//        /* send the string to the method that handles the display */
+//        displayMessage(priceMessage);
 
         /* check if the whipped cream button is selected */
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
@@ -100,8 +129,15 @@ public class MainActivity extends AppCompatActivity {
                 hasChocolate,
                 vOrderName);
 
-        /* send the string to the method that handles the display */
-        displayMessage(priceMessage);
+        String vSubject = "Just Java order for: " + vOrderName;
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, vSubject);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
 
     }
 
@@ -155,17 +191,17 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
+//    /**
+//     * This method displays the given text on the screen.
+//     */
+//    private void displayMessage(String message) {
+//        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        orderSummaryTextView.setText(message);
 
 //        The next two lines I only used them to test some code left here for reference
 //        View textView = findViewById(R.id.order_summary_text_view);
 //        textView.setVisibility(View.GONE);
 
-    }
+//    }
 
 }
