@@ -165,13 +165,13 @@ public class MainActivity extends AppCompatActivity {
                                      boolean addWhippedCream,
                                      boolean addChocolate,
                                      String OrderName) {
-        String orderMessage = "Name: " + OrderName;
+        String orderMessage = getString(R.string.order_summary_name, OrderName);
         orderMessage += "\nAdd whipped cream? " + addWhippedCream;
         orderMessage += "\nAdd chocolate? " + addChocolate;
         orderMessage += "\nQuantity: " + gQuantity;
         orderMessage += "\nTotal: ";
         orderMessage += NumberFormat.getCurrencyInstance().format(finalPrice);
-        orderMessage += "\nThank you!\n";
+        orderMessage += "\n" + getString(R.string.thank_you) + "\n";
         return orderMessage;
     }
 

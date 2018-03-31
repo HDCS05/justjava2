@@ -1,3 +1,45 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1">
     <string name="app_name">Just Java 2</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Header text for the name field [CHAR LIMIT=20]-->
+    <string name="name">Name</string>
+
+    <!--Header text for the whipped cream checkbox [CHAR LIMIT=20]-->
+    <string name="whipped_cream">Whipped Cream</string>
+
+    <!--Header text for the chocolate checkbox [CHAR LIMIT=20]-->
+    <string name="chocolate">Chocolate</string>
+
+    <!--Header text for the quantity label [CHAR LIMIT=20]-->
+    <string name="quantity">Quantity</string>
+
+    <!--Header text for the list of toppings [CHAR LIMIT=20]-->
+    <string name="toppings">Toppings</string>
+
+    <!--Header text for the minus button [CHAR LIMIT=1]-->
+    <string name="minus">-</string>
+
+    <!--Header text for the quantity text [CHAR LIMIT=1]-->
+    <string name="quantitytext">1</string>
+
+    <!--Header text for the plus sign [CHAR LIMIT=1]-->
+    <string name="plus">+</string>
+
+    <!--Header text for the price [CHAR LIMIT=1]-->
+    <string name="price">Price</string>
+
+    <!--Header text for the price [CHAR LIMIT=1]-->
+    <string name="pricetext">Price</string>
+
+    <!--Header text for the list of toppings [CHAR LIMIT=20]-->
+    <string name="order">Order</string>
+
+    <!--Thank you message for the order summary [CHAR LIMIT=NONE]-->
+    <string name="thank_you">Thank you!</string>
+
+    <!--Name for the order summary. It will be shown in the format of "Name: Amy" where
+    Amy is the user's name. [CHAR LIMIT=NONE]-->
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
 </resources>
