@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sólo Java 2</string>
+    <string name="order_summary_email_subject">"Sólo Java, orden para: "</string>
+    <string name="order_summary_name">Nombre</string>
+    <string name="order_summary_price">"Total: "</string>
+    <string name="order_summary_quantity">"Cantidad: "</string>
+    <string name="order_summary_whipped_cream">¿Agregar Crema Batida?</string>
+    <string name="price">Precio</string>
+    <string name="quantity">Cantidad</string>
+    <string name="thank_you">¡Gracias!</string>
+    <string name="toppings">Ingredientes</string>
+    <string name="whipped_cream">Crema Batida</string>
+    <string name="order_summary_chocolate">¿Agregar Chocolate?</string>
+    <string name="order">Ordenar</string>
+    <string name="name">Nombre</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="action_settings">Ajustes</string>
+</resources>
